@@ -1,0 +1,35 @@
+<form [formGroup]="reactiveForm">
+  <div>
+    <div class="editor__toolbar">
+      <button
+        class=""
+        [ngClass]="{ 'bg-black text-white': editor.isActive('heading') }"
+        (click)="editor.chain().focus().toggleHeading({ level: 1 }).run()"
+      >
+        <lucide-icon [img]="Heading1" size="16"></lucide-icon>
+      </button>
+      <button
+        class="ml-1"
+        [ngClass]="{ 'bg-black text-white': editor.isActive('bold') }"
+        (click)="editor.chain().focus().toggleBold().run()"
+      >
+        <lucide-icon [img]="Bold" size="16"></lucide-icon>
+      </button>
+      <button
+        class="ml-1"
+        [ngClass]="{ 'bg-black text-white': editor.isActive('italic') }"
+        (click)="editor.chain().focus().toggleItalic().run()"
+      >
+        <lucide-icon [img]="Italic" size="16"></lucide-icon>
+      </button>
+      <button
+        class="ml-1"
+        [ngClass]="{ 'bg-black text-white': editor.isActive('paragraph') }"
+        (click)="editor.chain().focus().setParagraph().run()"
+      >
+        <lucide-icon [img]="Pilcrow" size="16"></lucide-icon>
+      </button>
+    </div>
+    <tiptap-editor [editor]="editor" formControlName="content"></tiptap-editor>
+  </div>
+</form>

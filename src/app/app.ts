@@ -1,10 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { GridstackComponent } from 'gridstack/dist/angular';
-import {
-  AComponent,
-  BComponent,
-} from './features/characters/pages/character-editor/character-editor.component';
+import { GridTextComponent } from './shared/components/grid/grid-text.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +13,6 @@ export class App {
   protected readonly title = signal('grimora');
 
   constructor() {
-    GridstackComponent.addComponentToSelectorType([AComponent, BComponent]);
+    GridstackComponent.addComponentToSelectorType([GridTextComponent]);
   }
 }
