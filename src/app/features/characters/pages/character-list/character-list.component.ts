@@ -4,7 +4,7 @@ import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-character-list',
-  template: ` <p-button label="Navigate to detail" routerLink="/characters/1"></p-button> `,
+  templateUrl: './character-list.component.html',
   styles: [``],
   standalone: true,
   imports: [ButtonModule, RouterLink],

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { ImageModule } from 'primeng/image';
 
 @Component({
   selector: 'app-character-detail',
-  template: `<p>character-detail works!</p>`,
+  templateUrl: './character-detail.component.html',
   styles: [``],
   standalone: true,
-  imports: [],
+  imports: [ImageModule],
 })
 export class CharacterDetailComponent {}
