@@ -27,7 +27,10 @@
               }
             ],
             "styles": ["src/styles.scss"],
-            "outputMode": "static"
+            "outputMode": "static",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            }
           },
           "configurations": {
             "production": {
@@ -79,10 +82,16 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": ["src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            }
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e07ad2da-50d1-4440-8f03-5a164e212f57"
   }
 }
