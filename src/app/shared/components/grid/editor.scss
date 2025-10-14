@@ -2,26 +2,35 @@
 
 .editor__toolbar {
   padding: 0.5rem;
+  border-bottom: theme.$secondary-colour solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  button {
-    height: 32px;
-    width: auto;
-    border: none;
-    background: none;
+  &-item {
+    height: 37px;
+    width: 37px;
+    background: #f1f5f9;
+    margin: 0 0.25rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    color: theme.$secondary-colour;
 
-    &:hover {
-      background-color: theme.$primary-colour-50;
+    button {
+      height: 27px;
+      width: auto;
+      border: none;
+      background-color: #f1f5f9;
+      cursor: pointer;
+    }
+    .button--active {
+      background-color: white;
       border-radius: 5px;
-      color: theme.$secondary-colour;
+      box-shadow: var(--p-togglebutton-content-checked-shadow);
     }
   }
-}
-
-.editor__toolbar-button--active {
-  background-color: theme.$secondary-colour;
-  color: theme.$primary-colour;
 }
 
 grid-text-editor {
@@ -29,4 +38,5 @@ grid-text-editor {
   height: 100%;
   border: solid 1px theme.$secondary-colour;
   color: theme.$secondary-colour;
+  background-color: white;
 }

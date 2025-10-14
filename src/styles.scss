@@ -13,6 +13,8 @@ body {
 
 .grid-stack-item-content {
   text-align: center;
-  border: solid 1px theme.$secondary-colour;
   border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 5px theme.$secondary-colour;
+  color: theme.$accent-dark-colour;
 }

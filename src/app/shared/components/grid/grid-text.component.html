@@ -1,30 +1,78 @@
 <form [formGroup]="reactiveForm">
   <div>
     <div class="editor__toolbar">
-      <button
-        [ngClass]="{ 'editor__toolbar-button--active': editor.isActive('heading') }"
+      <!-- <p-togglebutton
+        onLabel="" offLabel=""
         (click)="editor.chain().focus().toggleHeading({ level: 1 }).run()"
       >
-        <lucide-icon [img]="Heading1" size="16"></lucide-icon>
-      </button>
-      <button
-        [ngClass]="{ 'editor__toolbar-button--active': editor.isActive('bold') }"
-        (click)="editor.chain().focus().toggleBold().run()"
+        <i class="pi pi-heading"></i>
+      </p-togglebutton> -->
+      <div class="editor__toolbar-item">
+        <button
+          (click)="editor.chain().focus().toggleBold().run()"
+          [ngClass]="{ 'button--active': editor.isActive('bold') }"
+        >
+          <i class="bi bi-type-bold"></i>
+        </button>
+      </div>
+      <div class="editor__toolbar-item">
+        <button
+          (click)="editor.chain().focus().toggleItalic().run()"
+          [ngClass]="{ 'button--active': editor.isActive('italic') }"
+        >
+          <i class="bi bi-type-italic"></i>
+        </button>
+      </div>
+      <div class="editor__toolbar-item">
+        <button
+          (click)="editor.chain().focus().toggleStrike().run()"
+          [ngClass]="{ 'button--active': editor.isActive('strike') }"
+        >
+          <i class="bi bi-type-strikethrough"></i>
+        </button>
+      </div>
+      <div class="editor__toolbar-item">
+        <button
+          (click)="editor.chain().focus().toggleCode().run()"
+          [ngClass]="{ 'button--active': editor.isActive('code') }"
+        >
+          <i class="bi bi-code-slash"></i>
+        </button>
+      </div>
+      <div class="editor__toolbar-item">
+        <button
+          (click)="editor.chain().focus().toggleUnderline().run()"
+          [ngClass]="{ 'button--active': editor.isActive('underline') }"
+        >
+          <i class="bi bi-type-underline"></i>
+        </button>
+      </div>
+      <div class="editor__toolbar-item">
+        <button
+          (click)="editor.chain().focus().toggleHighlight().run()"
+          [ngClass]="{ 'button--active': editor.isActive('highlight') }"
+        >
+          <i class="bi bi-highlighter"></i>
+        </button>
+      </div>
+      <!-- <div class="editor__toolbar-item">
+        <button (click)="editor.chain().focus().setLink({ href: prompt('Enter URL') }).run()"
+          [ngClass]="{ 'button--active': editor.isActive('link') }">
+          <i class="bi bi-link-45deg"></i>
+        </button>
+      </div> -->
+      <p-selectbutton
+        [style]="{ margin: '0 0.25rem' }"
+        [options]="justifyOptions"
+        optionLabel="justify"
       >
-        <lucide-icon [img]="Bold" size="16"></lucide-icon>
-      </button>
-      <button
-        [ngClass]="{ 'editor__toolbar-button--active': editor.isActive('italic') }"
-        (click)="editor.chain().focus().toggleItalic().run()"
-      >
-        <lucide-icon [img]="Italic" size="16"></lucide-icon>
-      </button>
-      <button
-        [ngClass]="{ 'editor__toolbar-button--active': editor.isActive('paragraph') }"
-        (click)="editor.chain().focus().setParagraph().run()"
-      >
-        <lucide-icon [img]="Pilcrow" size="16"></lucide-icon>
-      </button>
+        <ng-template #item let-item>
+          <i
+            [class]="item.icon"
+            (click)="editor.chain().focus().setTextAlign(item.justify).run()"
+          ></i>
+        </ng-template>
+      </p-selectbutton>
     </div>
     <tiptap-editor [editor]="editor" formControlName="content"></tiptap-editor>
   </div>
