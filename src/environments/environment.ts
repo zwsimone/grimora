@@ -1,13 +1,13 @@
 export const environment = {
-  production: true,
-  firebase: {
-    projectId: 'grimora-dnd',
-    appId: '1:100576791329:web:896a41411c25f5d90b0c60',
-    storageBucket: 'grimora-dnd.firebasestorage.app',
-    apiKey: 'AIzaSyBe4iljucfsjI_bBsOFPOrN9fIHfHH0nQ8',
-    authDomain: 'grimora-dnd.firebaseapp.com',
-    messagingSenderId: '100576791329',
-    projectNumber: '100576791329',
-    version: '2',
-  },
-};
+    production: true,
+    firebase: {
+        projectId: 'grimora-dnd',
+        appId: '1:100576791329:web:896a41411c25f5d90b0c60',
+        storageBucket: 'grimora-dnd.firebasestorage.app',
+        apiKey: 'AIzaSyBe4iljucfsjI_bBsOFPOrN9fIHfHH0nQ8',
+        authDomain: 'grimora-dnd.firebaseapp.com',
+        messagingSenderId: '100576791329',
+        projectNumber: '100576791329',
+        version: '2',
+    },
+}

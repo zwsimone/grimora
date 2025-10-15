@@ -12,9 +12,12 @@ It’s a naming convention for CSS classes that keeps styles modular, predictabl
 **Syntax:**
 
 ```scss
-.block {}
-.block__element {}
-.block--modifier {}
+.block {
+}
+.block__element {
+}
+.block--modifier {
+}
 ```
 
 ---
@@ -31,10 +34,10 @@ It’s a naming convention for CSS classes that keeps styles modular, predictabl
 
 ## 3. Naming Rules
 
-* Use **lowercase letters**, numbers, and hyphens only.
-* Do **not** use camelCase or underscores (except `__` and `--`).
-* Use **semantic** names, not positional ones (e.g. `.card__title`, not `.card__top`).
-* One class = one purpose.
+- Use **lowercase letters**, numbers, and hyphens only.
+- Do **not** use camelCase or underscores (except `__` and `--`).
+- Use **semantic** names, not positional ones (e.g. `.card__title`, not `.card__top`).
+- One class = one purpose.
 
 **Pattern:**
 
@@ -62,21 +65,21 @@ Inside `card.component.scss`:
 
 ```scss
 .card {
-  &__header {
-    font-weight: 600;
-  }
+    &__header {
+        font-weight: 600;
+    }
 
-  &__body {
-    padding: 1rem;
-  }
+    &__body {
+        padding: 1rem;
+    }
 
-  &__footer {
-    text-align: right;
-  }
+    &__footer {
+        text-align: right;
+    }
 
-  &--highlighted {
-    border-color: var(--accent-color);
-  }
+    &--highlighted {
+        border-color: var(--accent-color);
+    }
 }
 ```
 
@@ -88,8 +91,8 @@ Inside `card.component.scss`:
 
 ```html
 <button class="button button--primary">
-  <span class="button__icon bi bi-plus"></span>
-  <span class="button__label">Add Item</span>
+    <span class="button__icon bi bi-plus"></span>
+    <span class="button__label">Add Item</span>
 </button>
 ```
 
@@ -97,33 +100,33 @@ Inside `card.component.scss`:
 
 ```scss
 .button {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 6px;
-  cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
 
-  &__icon {
-    margin-right: 0.5rem;
-  }
+    &__icon {
+        margin-right: 0.5rem;
+    }
 
-  &__label {
-    font-weight: 500;
-  }
+    &__label {
+        font-weight: 500;
+    }
 
-  &--primary {
-    background-color: #007bff;
-    color: white;
-  }
+    &--primary {
+        background-color: #007bff;
+        color: white;
+    }
 
-  &--secondary {
-    background-color: #6c757d;
-    color: white;
-  }
+    &--secondary {
+        background-color: #6c757d;
+        color: white;
+    }
 
-  &--disabled {
-    opacity: 0.6;
-    pointer-events: none;
-  }
+    &--disabled {
+        opacity: 0.6;
+        pointer-events: none;
+    }
 }
 ```
 
@@ -135,15 +138,15 @@ Inside `card.component.scss`:
 
 ```html
 <div class="card card--compact">
-  <div class="card__header">
-    <h2 class="card__title">Session Notes</h2>
-  </div>
-  <div class="card__body">
-    <p class="card__text">You can store your D&D session logs here.</p>
-  </div>
-  <div class="card__footer">
-    <button class="button button--primary">Open</button>
-  </div>
+    <div class="card__header">
+        <h2 class="card__title">Session Notes</h2>
+    </div>
+    <div class="card__body">
+        <p class="card__text">You can store your D&D session logs here.</p>
+    </div>
+    <div class="card__footer">
+        <button class="button button--primary">Open</button>
+    </div>
 </div>
 ```
 
@@ -151,27 +154,27 @@ Inside `card.component.scss`:
 
 ```scss
 .card {
-  background: #1e1e1e;
-  border-radius: 10px;
-  padding: 1rem;
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 1rem;
 
-  &__header,
-  &__footer {
-    padding: 0.5rem 0;
-  }
+    &__header,
+    &__footer {
+        padding: 0.5rem 0;
+    }
 
-  &__title {
-    font-size: 1.25rem;
-    margin: 0;
-  }
+    &__title {
+        font-size: 1.25rem;
+        margin: 0;
+    }
 
-  &__body {
-    margin-bottom: 1rem;
-  }
+    &__body {
+        margin-bottom: 1rem;
+    }
 
-  &--compact {
-    padding: 0.5rem;
-  }
+    &--compact {
+        padding: 0.5rem;
+    }
 }
 ```
 
@@ -210,17 +213,13 @@ and use utility classes (`.u-*`) for cross-component behavior or layout helpers.
 
 ## 9. Angular-Specific Tips
 
-* Each component’s `.scss` should define styles scoped to one block.
-* Use Angular’s `[class.block--modifier]="condition"` for conditional styles.
+- Each component’s `.scss` should define styles scoped to one block.
+- Use Angular’s `[class.block--modifier]="condition"` for conditional styles.
 
 **Example:**
 
 ```html
-<button 
-  class="button" 
-  [class.button--disabled]="isDisabled">
-  Save
-</button>
+<button class="button" [class.button--disabled]="isDisabled">Save</button>
 ```
 
 ---

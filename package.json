@@ -1,74 +1,62 @@
 {
-  "name": "grimora",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:grimora": "node dist/grimora/server/server.mjs",
-    "prepare": "husky install"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
-  },
-  "private": true,
-  "dependencies": {
-    "@angular/common": "^20.3.0",
-    "@angular/compiler": "^20.3.0",
-    "@angular/core": "^20.3.0",
-    "@angular/fire": "^20.0.1",
-    "@angular/forms": "^20.3.0",
-    "@angular/platform-browser": "^20.3.0",
-    "@angular/router": "^20.3.0",
-    "@primeuix/themes": "^1.2.5",
-    "@tiptap/core": "^3.6.6",
-    "@tiptap/extension-highlight": "^3.6.6",
-    "@tiptap/extension-horizontal-rule": "^3.6.6",
-    "@tiptap/extension-image": "^3.6.6",
-    "@tiptap/extension-list": "^3.6.6",
-    "@tiptap/extension-placeholder": "^3.6.6",
-    "@tiptap/extension-subscript": "^3.6.6",
-    "@tiptap/extension-superscript": "^3.6.6",
-    "@tiptap/extension-text-align": "^3.6.6",
-    "@tiptap/extension-typography": "^3.6.6",
-    "@tiptap/extensions": "^3.6.6",
-    "@tiptap/pm": "^3.6.6",
-    "@tiptap/starter-kit": "^3.6.6",
-    "bootstrap-icons": "^1.13.1",
-    "gridstack": "^12.3.3",
-    "ngx-tiptap": "^14.0.1",
-    "primeng": "^20.2.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
-  },
-  "devDependencies": {
-    "@angular/build": "^20.3.5",
-    "@angular/cli": "^20.3.5",
-    "@angular/compiler-cli": "^20.3.0",
-    "@types/jasmine": "~5.1.0",
-    "jasmine-core": "~5.9.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "prettier": "3.6.2",
-    "sass": "^1.93.2",
-    "sass-embedded": "^1.93.2",
-    "typescript": "~5.9.2"
-  },
-  "lint-staged": {
-    "*.{ts,scss,html}": "prettier --write"
-  }
+    "name": "grimora",
+    "version": "0.0.0",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build",
+        "watch": "ng build --watch --configuration development",
+        "test": "ng test",
+        "serve:ssr:grimora": "node dist/grimora/server/server.mjs",
+        "prepare": "husky install"
+    },
+    "private": true,
+    "dependencies": {
+        "@angular/common": "^20.3.0",
+        "@angular/compiler": "^20.3.0",
+        "@angular/core": "^20.3.0",
+        "@angular/fire": "^20.0.1",
+        "@angular/forms": "^20.3.0",
+        "@angular/platform-browser": "^20.3.0",
+        "@angular/router": "^20.3.0",
+        "@primeuix/themes": "^1.2.5",
+        "@tiptap/core": "^3.6.6",
+        "@tiptap/extension-highlight": "^3.6.6",
+        "@tiptap/extension-horizontal-rule": "^3.6.6",
+        "@tiptap/extension-image": "^3.6.6",
+        "@tiptap/extension-list": "^3.6.6",
+        "@tiptap/extension-placeholder": "^3.6.6",
+        "@tiptap/extension-subscript": "^3.6.6",
+        "@tiptap/extension-superscript": "^3.6.6",
+        "@tiptap/extension-text-align": "^3.6.6",
+        "@tiptap/extension-typography": "^3.6.6",
+        "@tiptap/extensions": "^3.6.6",
+        "@tiptap/pm": "^3.6.6",
+        "@tiptap/starter-kit": "^3.6.6",
+        "bootstrap-icons": "^1.13.1",
+        "gridstack": "^12.3.3",
+        "ngx-tiptap": "^14.0.1",
+        "primeng": "^20.2.0",
+        "rxjs": "~7.8.0",
+        "tslib": "^2.3.0"
+    },
+    "devDependencies": {
+        "@angular/build": "^20.3.5",
+        "@angular/cli": "^20.3.5",
+        "@angular/compiler-cli": "^20.3.0",
+        "@types/jasmine": "~5.1.0",
+        "jasmine-core": "~5.9.0",
+        "karma": "~6.4.0",
+        "karma-chrome-launcher": "~3.2.0",
+        "karma-coverage": "~2.2.0",
+        "karma-jasmine": "~5.1.0",
+        "karma-jasmine-html-reporter": "~2.1.0",
+        "prettier": "3.6.2",
+        "sass": "^1.93.2",
+        "sass-embedded": "^1.93.2",
+        "typescript": "~5.9.2"
+    },
+    "lint-staged": {
+        "*.{ts,scss,html}": "prettier --write"
+    }
 }
