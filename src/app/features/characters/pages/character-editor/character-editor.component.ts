@@ -15,7 +15,7 @@ export class CharacterEditorComponent {
             { minH: 2, minW: 8, selector: 'app-grid-text' },
             { minH: 2, minW: 8, selector: 'app-grid-text', input: { value: 'bar' } }, // custom input that works using BaseWidget.deserialize() Object.assign(this, w.input)
             { minH: 2, minW: 8, selector: 'app-grid-text' },
-            { content: 'plain html' },
+            { minH: 4, minW: 4, selector: 'app-grid-image' },
         ],
     }
 }

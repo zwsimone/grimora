@@ -2,19 +2,18 @@ import { CommonModule } from '@angular/common'
 import { Component, Input, OnDestroy, OnInit } from '@angular/core'
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Editor } from '@tiptap/core'
+import { Level } from '@tiptap/extension-heading'
 import HighLight from '@tiptap/extension-highlight'
 import Placeholder from '@tiptap/extension-placeholder'
 import TextAlign from '@tiptap/extension-text-align'
 import StarterKit from '@tiptap/starter-kit'
 import { BaseWidget, NgCompInputs } from 'gridstack/dist/angular'
 import { TiptapEditorDirective } from 'ngx-tiptap'
-import { Level } from '@tiptap/extension-heading'
 // PrimeNG modules
 import { ButtonModule } from 'primeng/button'
-import { SelectButtonModule } from 'primeng/selectbutton'
-import { StyleClassModule } from 'primeng/styleclass'
-import { ToggleButtonModule } from 'primeng/togglebutton'
 import { SelectModule } from 'primeng/select'
+import { SelectButtonModule } from 'primeng/selectbutton'
+import { ToggleButtonModule } from 'primeng/togglebutton'
 
 // some custom components
 @Component({
@@ -28,7 +27,6 @@ import { SelectModule } from 'primeng/select'
         SelectButtonModule,
         ButtonModule,
         ToggleButtonModule,
-        StyleClassModule,
         SelectModule,
     ],
 })
