@@ -1,20 +1,20 @@
 @use 'theme';
+@use 'editor';
 @import 'gridstack/dist/gridstack.min.css';
 
 /* You can add global styles to this file, and also import other style files */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: theme.$primary-colour;
+    font-family: 'Montserrat', sans-serif;
+    background-color: theme.$primary-colour;
 }
 
 .grid-stack {
-  background: none;
+    background: none;
 }
 
 .grid-stack-item-content {
-  text-align: center;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 0 0 5px theme.$secondary-colour;
-  color: theme.$accent-dark-colour;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px theme.$secondary-colour;
+    color: theme.$accent-dark-colour;
 }

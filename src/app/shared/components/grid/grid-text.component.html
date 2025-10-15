@@ -1,79 +1,94 @@
-<form [formGroup]="reactiveForm">
-  <div>
+<div>
     <div class="editor__toolbar">
-      <!-- <p-togglebutton
-        onLabel="" offLabel=""
-        (click)="editor.chain().focus().toggleHeading({ level: 1 }).run()"
-      >
-        <i class="pi pi-heading"></i>
-      </p-togglebutton> -->
-      <div class="editor__toolbar-item">
-        <button
-          (click)="editor.chain().focus().toggleBold().run()"
-          [ngClass]="{ 'button--active': editor.isActive('bold') }"
+        <div class="editor__toolbar-item-group">
+            <button (click)="editor.chain().focus().undo().run()">
+                <i class="bi bi-arrow-counterclockwise"></i>
+            </button>
+            <button (click)="editor.chain().focus().redo().run()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+        </div>
+        <p-select
+            class="format-select"
+            [(ngModel)]="selectedFormat"
+            [options]="formatOptions"
+            optionLabel="name"
+            optionValue="value"
+            (onChange)="setHeading()"
         >
-          <i class="bi bi-type-bold"></i>
-        </button>
-      </div>
-      <div class="editor__toolbar-item">
-        <button
-          (click)="editor.chain().focus().toggleItalic().run()"
-          [ngClass]="{ 'button--active': editor.isActive('italic') }"
-        >
-          <i class="bi bi-type-italic"></i>
-        </button>
-      </div>
-      <div class="editor__toolbar-item">
-        <button
-          (click)="editor.chain().focus().toggleStrike().run()"
-          [ngClass]="{ 'button--active': editor.isActive('strike') }"
-        >
-          <i class="bi bi-type-strikethrough"></i>
-        </button>
-      </div>
-      <div class="editor__toolbar-item">
-        <button
-          (click)="editor.chain().focus().toggleCode().run()"
-          [ngClass]="{ 'button--active': editor.isActive('code') }"
-        >
-          <i class="bi bi-code-slash"></i>
-        </button>
-      </div>
-      <div class="editor__toolbar-item">
-        <button
-          (click)="editor.chain().focus().toggleUnderline().run()"
-          [ngClass]="{ 'button--active': editor.isActive('underline') }"
-        >
-          <i class="bi bi-type-underline"></i>
-        </button>
-      </div>
-      <div class="editor__toolbar-item">
-        <button
-          (click)="editor.chain().focus().toggleHighlight().run()"
-          [ngClass]="{ 'button--active': editor.isActive('highlight') }"
-        >
-          <i class="bi bi-highlighter"></i>
-        </button>
-      </div>
-      <!-- <div class="editor__toolbar-item">
+        </p-select>
+        <div class="editor__toolbar-item-group">
+            <button
+                (click)="editor.chain().focus().toggleBulletList().run()"
+                [ngClass]="{ 'button--active': editor.isActive('bulletList') }"
+            >
+                <i class="bi bi-list-ul"></i>
+            </button>
+            <button
+                (click)="editor.chain().focus().toggleOrderedList().run()"
+                [ngClass]="{ 'button--active': editor.isActive('orderedList') }"
+            >
+                <i class="bi bi-list-ol"></i>
+            </button>
+            <button
+                (click)="editor.chain().focus().toggleBlockquote().run()"
+                [ngClass]="{ 'button--active': editor.isActive('blockquote') }"
+            >
+                <i class="bi bi-quote"></i>
+            </button>
+        </div>
+        <div class="editor__toolbar-item-group">
+            <button
+                (click)="editor.chain().focus().toggleBold().run()"
+                [ngClass]="{ 'button--active': editor.isActive('bold') }"
+            >
+                <i class="bi bi-type-bold"></i>
+            </button>
+            <button
+                (click)="editor.chain().focus().toggleItalic().run()"
+                [ngClass]="{ 'button--active': editor.isActive('italic') }"
+            >
+                <i class="bi bi-type-italic"></i>
+            </button>
+            <button
+                (click)="editor.chain().focus().toggleStrike().run()"
+                [ngClass]="{ 'button--active': editor.isActive('strike') }"
+            >
+                <i class="bi bi-type-strikethrough"></i>
+            </button>
+            <button
+                (click)="editor.chain().focus().toggleUnderline().run()"
+                [ngClass]="{ 'button--active': editor.isActive('underline') }"
+            >
+                <i class="bi bi-type-underline"></i>
+            </button>
+            <button
+                (click)="editor.chain().focus().toggleHighlight().run()"
+                [ngClass]="{ 'button--active': editor.isActive('highlight') }"
+            >
+                <i class="bi bi-highlighter"></i>
+            </button>
+        </div>
+        <!-- <div class="editor__toolbar-item">
         <button (click)="editor.chain().focus().setLink({ href: prompt('Enter URL') }).run()"
           [ngClass]="{ 'button--active': editor.isActive('link') }">
           <i class="bi bi-link-45deg"></i>
         </button>
       </div> -->
-      <p-selectbutton
-        [style]="{ margin: '0 0.25rem' }"
-        [options]="justifyOptions"
-        optionLabel="justify"
-      >
-        <ng-template #item let-item>
-          <i
-            [class]="item.icon"
-            (click)="editor.chain().focus().setTextAlign(item.justify).run()"
-          ></i>
-        </ng-template>
-      </p-selectbutton>
+        <p-selectbutton
+            [style]="{ margin: '0 0.25rem' }"
+            [options]="justifyOptions"
+            optionLabel="justify"
+        >
+            <ng-template #item let-item>
+                <i
+                    [class]="item.icon"
+                    (click)="editor.chain().focus().setTextAlign(item.justify).run()"
+                ></i>
+            </ng-template>
+        </p-selectbutton>
     </div>
-    <tiptap-editor [editor]="editor" formControlName="content"></tiptap-editor>
-  </div>
-</form>
+    <form [formGroup]="reactiveForm">
+        <tiptap-editor [editor]="editor" formControlName="content"></tiptap-editor>
+    </form>
+</div>
