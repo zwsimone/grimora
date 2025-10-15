@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { Component, Input, OnDestroy } from '@angular/core'
+import { Component, Input, OnDestroy, OnInit } from '@angular/core'
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Editor } from '@tiptap/core'
 import HighLight from '@tiptap/extension-highlight'
@@ -32,8 +32,8 @@ import { SelectModule } from 'primeng/select'
         SelectModule,
     ],
 })
-export class GridTextComponent extends BaseWidget implements OnDestroy {
-    @Input() value: string = '<p>Hello, Tiptap!</p>' // test custom input data
+export class GridTextComponent extends BaseWidget implements OnInit, OnDestroy {
+    @Input() value: string | undefined // test custom input data
 
     justifyOptions = [
         { justify: 'left', icon: 'bi bi-text-left' },
@@ -50,9 +50,7 @@ export class GridTextComponent extends BaseWidget implements OnDestroy {
     ]
     selectedFormat: Level | '' = ''
 
-    reactiveForm = new FormGroup({
-        content: new FormControl(this.value),
-    })
+    reactiveForm: FormGroup = new FormGroup({})
 
     editor = new Editor({
         extensions: [
@@ -70,7 +68,13 @@ export class GridTextComponent extends BaseWidget implements OnDestroy {
     })
 
     public override serialize(): NgCompInputs | undefined {
-        return this.value ? { text: this.value } : undefined
+        return this.value ? { value: this.value } : undefined
+    }
+
+    ngOnInit(): void {
+        this.reactiveForm = new FormGroup({
+            content: new FormControl(this.value),
+        })
     }
 
     ngOnDestroy() {
