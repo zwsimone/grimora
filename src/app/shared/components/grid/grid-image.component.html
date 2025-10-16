@@ -1,0 +1,16 @@
+<div style="padding: 1rem">
+    <p-toast />
+    <p-fileupload
+        #fu
+        mode="basic"
+        chooseLabel="Choose"
+        chooseIcon="bi bi-upload"
+        name="demo[]"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        accept="image/*"
+        maxFileSize="1000000000"
+        (onUpload)="onUpload($event)"
+        [multiple]="true"
+        mode="advanced"
+    />
+</div>

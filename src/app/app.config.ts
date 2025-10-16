@@ -17,10 +17,13 @@ import { getStorage, provideStorage } from '@angular/fire/storage'
 import Aura from '@primeuix/themes/aura'
 import { environment } from '../environments/environment'
 import { provideAnimations } from '@angular/platform-browser/animations'
+import { MessageService } from 'primeng/api'
+import { provideHttpClient } from '@angular/common/http'
 
 export const appConfig: ApplicationConfig = {
     providers: [
         provideBrowserGlobalErrorListeners(),
+        provideHttpClient(),
         provideZonelessChangeDetection(),
         provideRouter(routes),
         provideClientHydration(withEventReplay()),
@@ -35,5 +38,6 @@ export const appConfig: ApplicationConfig = {
         provideFirestore(() => getFirestore()),
         provideFunctions(() => getFunctions()),
         provideStorage(() => getStorage()),
+        MessageService,
     ],
 }
